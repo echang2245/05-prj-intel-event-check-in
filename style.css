@@ -13,7 +13,7 @@ body {
   min-height: 100vh;
 }
 
-/* Add form label styling */
+/* Form Label */
 .form-label {
   display: block;
   text-align: left;
@@ -25,18 +25,21 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       135deg,
       rgba(0, 153, 219, 0.9) 0%,
       rgba(0, 104, 181, 0.9) 50%,
       rgba(0, 60, 116, 0.9) 100%
     ),
     url("img/bg.jpg");
+
   background-size: cover;
   background-position: center;
+
   text-align: center;
   padding: 60px 32px;
-  color: #fff;
+  color: white;
   margin-bottom: 34px;
 }
 
@@ -75,7 +78,60 @@ body {
   color: white;
 }
 
-/* Main container */
+/* Attendance Tracker */
+.attendance-tracker {
+  max-width: 700px;
+  width: 90%;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.attendance-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 15px;
+  font-size: 17px;
+  color: #64748b;
+}
+
+.attendance-header i {
+  color: #0071c5;
+  font-size: 20px;
+  margin-right: 4px;
+}
+
+#attendeeCount {
+  color: #0071c5;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 2px;
+}
+
+/* Progress Bar */
+.progress-container {
+  width: 100%;
+  max-width: 500px;
+  height: 16px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 8px auto;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background-color: #0071c5;
+  background-image: linear-gradient(90deg, #0071c5, #00aeef);
+
+  border-radius: 10px;
+  transition: width 0.6s ease;
+}
+
+/* Main Container */
 .container {
   max-width: 700px;
   width: 90%;
@@ -87,7 +143,23 @@ body {
   text-align: center;
 }
 
-/* Check-in form */
+/* Greeting */
+#greeting {
+  font-weight: 500;
+  font-size: 18px;
+  padding: 16px 20px;
+  border-radius: 8px;
+  color: #333;
+  margin-bottom: 15px;
+  display: none;
+}
+
+.success-message {
+  background-color: #e8f4fc;
+  color: #003c71;
+}
+
+/* Check-In Form */
 .check-in {
   width: 100%;
   margin: 0 auto;
@@ -103,7 +175,14 @@ body {
   width: 100%;
 }
 
-/* Form elements */
+.input-wrapper {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  min-width: 0;
+}
+
+/* Input */
 input {
   flex: 1;
   padding: 16px 20px;
@@ -123,6 +202,20 @@ input:focus {
   box-shadow: 0 0 0 4px rgba(0, 113, 197, 0.15);
 }
 
+/* Select */
+select {
+  padding: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 500;
+  background: white;
+  color: #2c3e50;
+  cursor: pointer;
+  min-width: 140px;
+}
+
+/* Button */
 button {
   background-color: #0071c5;
   color: white;
@@ -136,6 +229,7 @@ button {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 113, 197, 0.2);
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -152,156 +246,9 @@ button:hover {
   white-space: nowrap;
 }
 
-/* Icon spacing */
-.fas {
-  margin-right: 8px;
-}
-
 button .fas {
   font-size: 18px;
   margin-right: 10px;
-}
-
-.attendance-header i {
-  font-size: 22px;
-  margin-right: 8px;
-}
-
-/* Attendance section spacing */
-.attendance-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  margin-bottom: 15px;
-  font-size: 17px;
-  color: #64748b;
-}
-
-/* Attendance tracker styling */
-.attendance-tracker {
-  max-width: 700px;
-  width: 90%;
-  margin: 0 auto 40px;
-  padding: 0 20px;
-  text-align: center;
-}
-
-.attendance-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  margin-bottom: 15px;
-  font-size: 17px;
-  color: #64748b;
-}
-
-#attendeeCount {
-  color: #0071c5;
-  font-size: 24px;
-  font-weight: 700;
-  margin: 0 2px;
-}
-
-.attendance-header i {
-  color: #0071c5;
-  font-size: 20px;
-  margin-right: 4px;
-}
-
-/* Max attendees text */
-.attendance-header span:last-child {
-  color: #64748b;
-  font-size: 17px;
-}
-
-/* Progress container - simplified */
-.progress-container {
-  width: 100%;
-  max-width: 500px;
-  height: 16px;
-  background-color: #e0e0e0;
-  border-radius: 10px;
-  overflow: hidden;
-  margin: 8px auto;
-  position: relative;
-}
-
-.progress-bar {
-  width: 0%;
-  height: 100%;
-  background-color: #0071c5;
-  background-image: linear-gradient(90deg, #0071c5, #00aeef);
-  border-radius: 10px;
-  transition: width 0.6s ease;
-}
-
-/* Adjust spacing between components */
-.container {
-  margin-top: 0;
-}
-
-/* Messages */
-#greeting {
-  font-weight: 500;
-  font-size: 18px;
-  padding: 16px 20px;
-  border-radius: 8px;
-  color: #333;
-  margin-bottom: 15px;
-  display: none;
-}
-
-.success-message {
-  background-color: #e8f4fc;
-  color: #003c71;
-}
-
-/* Counter */
-#attendeeCount {
-  color: #0071c5;
-  font-size: 24px;
-  font-weight: 700;
-  margin: 0 2px;
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 40px 20px;
-  color: #94a3b8;
-  font-size: 14px;
-}
-
-.footer-link {
-  color: #64748b;
-  text-decoration: none;
-}
-
-.footer-link:hover {
-  color: #0071c5;
-  text-decoration: underline;
-}
-
-/* Input wrapper for name and team select */
-.input-wrapper {
-  flex: 1;
-  display: flex;
-  gap: 10px;
-  min-width: 0;
-}
-
-select {
-  padding: 16px;
-  border: 2px solid rgba(0, 0, 0, 0.08);
-  border-radius: 12px;
-  font-size: 17px;
-  font-weight: 500;
-  background: white;
-  color: #2c3e50;
-  cursor: pointer;
-  min-width: 140px;
 }
 
 /* Team Stats */
@@ -331,13 +278,14 @@ select {
   gap: 5px;
 }
 
-/* Team card colors */
 .team-card.water {
   background-color: #e8f7fc;
 }
+
 .team-card.zero {
   background-color: #ecfdf3;
 }
+
 .team-card.power {
   background-color: #fff7ed;
 }
@@ -348,24 +296,113 @@ select {
   color: #475569;
 }
 
-/* Mobile responsive */
+.team-count {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0071c5;
+}
+
+/* Attendee List */
+.attendee-list-section {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 2px solid #f1f5f9;
+}
+
+.attendee-list-section h3 {
+  color: #64748b;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+#attendeeList {
+  list-style: none;
+  padding: 0;
+}
+
+#attendeeList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #f8fafc;
+  padding: 13px 16px;
+  margin-bottom: 8px;
+
+  border-radius: 8px;
+  color: #475569;
+
+  text-align: left;
+}
+
+.attendee-name {
+  font-weight: 600;
+}
+
+.attendee-team {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Celebration */
+#celebrationMessage {
+  display: none;
+
+  margin-top: 25px;
+  padding: 20px;
+
+  background-color: #ecfdf3;
+  color: #166534;
+
+  font-size: 19px;
+  font-weight: 600;
+
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.footer-link {
+  color: #64748b;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #0071c5;
+  text-decoration: underline;
+}
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .hero {
     padding: 35px 20px;
   }
+
   .hero h1 {
     font-size: 38px;
   }
+
   .container {
-    padding: 32px;
-    margin: 0 15px 30px;
+    padding: 24px;
   }
 
   .form-group {
     flex-direction: column;
   }
 
+  .input-wrapper {
+    flex-direction: column;
+  }
+
   input,
+  select,
   button {
     width: 100%;
   }
@@ -374,11 +411,12 @@ select {
     height: 50px;
   }
 
-  .input-wrapper {
-    flex-direction: column;
-  }
-
   .teams-grid {
     grid-template-columns: 1fr;
+  }
+
+  #attendeeList li {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
